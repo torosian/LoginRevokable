@@ -4,7 +4,7 @@
  "description": "An Authentication plugin that allows a user to log into multiple locations, however remotely logs out of all locations when any of the locations log out.",
  "theme": false,
  "license": "GPL",
- "keywords": ["Login", "Remote", "Authentication", "Logout"]
+ "keywords": ["Login", "Remote", "Authentication", "Logout"],
  "require": {
     "piwik": ">=2.11.2-b1"
  },
