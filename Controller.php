@@ -99,8 +99,7 @@ class Controller extends \Piwik\Plugin\Controller
         $form = new FormLogin();
         if ($form->validate()) {
             $nonce = $form->getSubmitValue('form_nonce');
-	    var_dump($nonce);
-            if (Nonce::verifyNonce('LoginRevokable.login', $nonce)) {
+	    if (Nonce::verifyNonce('LoginRevokable.login', $nonce)) {
                 $login = $form->getSubmitValue('form_login');
                 $password = $form->getSubmitValue('form_password');
                 $rememberMe = $form->getSubmitValue('form_rememberme') == '1';

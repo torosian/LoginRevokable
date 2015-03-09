@@ -63,7 +63,6 @@ class Auth extends \Piwik\Plugins\Login\Auth
         if (empty(static::$session->auth2) && $this->login != "" && $this->md5Password != "") {
             static::$session->auth2 = mt_rand();
 	    Db::get()->query("INSERT INTO " . Common::prefixTable("revokable_auth") . " SET auth_user = ?, auth_token = ?, auth_last = NOW()", array($this->login, static::$session->auth2));
-	    var_dump(array($this->login, static::$session->auth2));
         }
 
 	$revokableToken = Db::get()->fetchAssoc("SELECT * FROM " . Common::prefixTable("revokable_auth") . " WHERE auth_token = ?", array(static::$session->auth2));
